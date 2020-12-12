@@ -1,0 +1,10 @@
+.dropdown-toggle, .dropdown-item
+{
+cursor: pointer;
+color: aqua;
+}
+
+.ritu{
+    background-color: cornsilk;
+    color: chocolate;
+}

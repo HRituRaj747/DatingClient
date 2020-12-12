@@ -1,0 +1,41 @@
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Dating App</a>
+
+    <ul class="navbar-nav mr-auto" *ngIf="accountService.currentUser$ |async">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Maches </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Messages</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" (click)="logout()">LogOut</a>
+      </li> -->
+    </ul>
+    <!-- async pipe is used to subscribe to obesrvable which is created in service -->
+<div class="dropdown" *ngIf="accountService.currentUser$ |async" dropdown>
+  <a href=# class="dropdown-toggle text-light" dropdownToggle> Welcome User</a>   
+  <div class="dropdown-menu mt-3" *dropdownMenu>
+    <a href=# class="dropdown-item">Edit Profile</a>
+    <div class="dropdown-divider"></div>
+    <a href=# class="dropdown-item ritu" (click)="logout()">Log Out</a>
+    
+    
+  </div>
+</div>
+
+    <form #loginForm="ngForm" *ngIf="(accountService.currentUser$ | async)===null" class="form-inline mt-2 mt-md-0" (ngSubmit)= "login()" autocomplete="off">
+      <input name="username" [(ngModel)]="mode.username" class="form-control mr-sm-2" type="text" placeholder="UserName" >
+      <input  name="password" [(ngModel)]="mode.password"  class="form-control mr-sm-2" type="password" placeholder="Password" >
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+    
+    </form>
+  </div>
+  
+  
+</nav>
