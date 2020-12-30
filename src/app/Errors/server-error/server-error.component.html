@@ -1,0 +1,14 @@
+<h4>Internal server error - refreshing page will </h4>
+
+<ng-container *ngIf="error" >
+  <h5 class="text-danger">Error:{{error.details}}</h5>
+  <p class="font-weight-bold">Hey oggy</p>
+<ol>
+  <li>open the chrome</li>
+  <li>open f12</li>
+</ol>
+
+<p>
+  <code  class ="mt-5" style="background-color: antiquewhite;">{{error.details}}</code>
+</p>
+</ng-container>

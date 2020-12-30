@@ -1,0 +1,80 @@
+.resume-wrapper .resume-layout {
+    font-size: 13px;
+}
+
+.resume-layout.cv7 .resume__section:last-child {
+    padding-bottom: 0;
+}
+
+.resume-layout.cv7 .resume__section {
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+}
+
+.resume-layout .resume__section {
+    font-size: 1em;
+}
+
+.resume__section {
+    position: relative;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+section {
+    display: block;
+}
+
+Style Attribute {
+    min-height: 1089.93px;
+    font-size: 13.0678px;
+    display: block;
+}
+
+.resume-layout.cv7 {
+    line-height: 1.4;
+    font-weight: normal;
+    font-family: "Roboto TTF", sans-serif;
+}
+
+.resume-wrapper .resume-layout {
+    font-size: 13px;
+}
+
+.resume-layout {
+    font-size: 14.3px;
+    line-height: 1.4;
+    font-family: sans-serif;
+    padding-bottom: 0 !important;
+}
+
+body {
+    font-family: "Open Sans TTF", sans-serif;
+    font-size: 1.6rem;
+    color: #222;
+    line-height: 1.5;
+}
+
+html {
+    font-size: 62.5%;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-shadow: rgba(0,0,0,0.01) 0 0 1px;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+::selection {
+    background: #d4d7dd;
+}

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { User } from '../_models/user';
 import { AccountService } from '../_services/account.service';
@@ -9,19 +11,21 @@ import { AccountService } from '../_services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  @Input() username: null | undefined;
   mode: any = {};
+  // user: User | undefined;
   // Way to check if person is logged in or not
-  // loggedIn = false;
+  // username: any;
   // val = false;
- // currentUser$: Observable<User> ;
+  // currentUser$: Observable<User> | undefined ;
 // To directly using service in html we made it public
-  constructor(public accountService: AccountService) { }
+  constructor(public accountService: AccountService, private router: Router, private toastser: ToastrService) { }
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
-   // this.getCurrentUser();
+   // this.getCurrentUsername();
    // Checking if user is there or not
-   // this.currentUser$ = this.accountService.currentUser$;
+    // this.u = this.accountService.currentUser$;
   }
 
   // tslint:disable-next-line: typedef
@@ -29,28 +33,34 @@ export class NavComponent implements OnInit {
   {
     this.accountService.login(this.mode).subscribe(Option => {
      // this.mode = Option;
-     console.log(Option);
-     //this.loggedIn = true;
-    }, error => {
-      console.log(error);
+    console.log('options returned from login' + Option);
+     // this.loggedIn = true;
+    this.router.navigateByUrl('/members');
+    this.toastser.success('Logged In Successfully ');
     });
-    console.log(this.mode);
+   // console.log(this.mode);
   }
 
   // tslint:disable-next-line: typedef
   logout()
   {
     this.accountService.logout();
-    //this.loggedIn = false;
+    this.router.navigateByUrl('/');
+    // this.loggedIn = false;
   }
 
   // tslint:disable-next-line: typedef
-  // getCurrentUser(){
-  //   this.accountService.currentUser$.subscribe(user => {
-  //     this.loggedIn = !!user;
-  //   }, error => {
-  //     console.log(error);
-  //   });
+  // getCurrentUsername(){
+
+  // // tslint:disable-next-line: no-non-null-assertion
+  // const user: User =  JSON.parse(localStorage.getItem('user')! );
+  // this.username = user.username;
+  // // this.accountService.currentUser$.subscribe(user => {
+  // //      this.username = user.username;
+  // //   }, error => {
+  // //     console.log(error);
+  // //   });
+  // //  }
   // }
 
 }

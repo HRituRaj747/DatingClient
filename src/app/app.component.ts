@@ -11,7 +11,7 @@ import { AccountService } from './_services/account.service';
 })
 export class AppComponent implements OnInit{
 
-
+username: any;
   title = 'Dating App';
   constructor( private accountserv: AccountService){}
 
@@ -29,7 +29,9 @@ setCurrentUser()
 {
  // tslint:disable-next-line: no-non-null-assertion
  const user: User = JSON.parse(localStorage.getItem('user')! );
+ // this.username = user.username;
  this.accountserv.setCurrentUser(user);
+ 
 }
 
 
