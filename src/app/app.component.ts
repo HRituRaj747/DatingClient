@@ -31,7 +31,6 @@ setCurrentUser()
  const user: User = JSON.parse(localStorage.getItem('user')! );
  // this.username = user.username;
  this.accountserv.setCurrentUser(user);
- 
 }
 
 

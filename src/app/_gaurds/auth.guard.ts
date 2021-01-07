@@ -13,6 +13,7 @@ export class AuthGuard implements CanActivate {
   {
 
   }
+  // Hre oberbale is used bcs we are currecnt user is of observable type
   canActivate(): Observable<boolean> {
      return this.accntserv.currentUser$.pipe(
         map(user => {

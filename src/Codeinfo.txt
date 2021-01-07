@@ -1,0 +1,64 @@
+what is ng form
+A ng form is a angular form which is used to make forms in angular. It supports a two way data binding. 
+It can be accessed in ts file using viewchild property.
+
+in ts file we need to pass the formname not the id.
+
+then we can use that to reset the form and preserve the changed value. But if we will refresh the form that value will go
+
+A normal form can be made angular forms using #formname= ngForm.
+The formname is used widely in application to acces the angular form property like if we want to track that form is dirty or not, or if we want to disbale the button if form is dirty
+
+the property name inside ngmodel and name defined in form should be same otherwise binding wont work.
+
+what is use of id in angular form
+
+Basically if a button is there inside form tag then on click of that button ngSubmit will call the the method which is defined on ngSubmit.
+
+But if a button is not inside form and we want to submt the form on that button click then we will use id which is defined inside the form component
+<button form="editForm"></button>
+
+================================================================================================================
+
+what is CanDeactivate Gaurd
+
+This is a angular gaurd whose type is of boolean. Gaurds are used in app.routing.module.ts
+
+in that we define who CanDeactivate the gaurd or who can activate the gaurd.
+
+In our gaurd component.ts  we will write the logic based on condition it will return true and false
+
+if the gaurd returns true the CanActivate will let us access that component if false then we cant access the component 
+
+in Case of CanDeactivate it will also true and false like when the gaurd will be CanDeactivated it is basically used to prevent user from moving to another component when they are doing some editing work in the component.
+This will only work inside angular app
+
+In case if user closes the brower and we want to avoid that accidental closer of things we can use 
+
+@HostListener('window:beforeunload', ['$event']) unloadnotification($event: any) {
+    if (this.editform.dirty){
+      $event.returnValue = true;
+    }
+    @HostListener will listen to all our brower event here name of function can be anything buy returnValue should be written in same way as it is otherwise it wont work
+
+=================================================================================================================
+Interceptors:
+What is Interceptors
+
+Interceptors are angular specail type of services which actually implements HttpInterceptor class.
+Most interceptors transform the outgoing request before passing it to the next interceptor in the chain, by calling next.handle(transformedReq). An interceptor may transform the response event stream as well, by applying additional RxJS operators on the stream returned by next.handle().
+
+why to use interceptors?
+
+If we want to transform any httprequest or response before it is passed to next event , for that purpose we use interceptor.
+
+For ex: We want to authenticate api using jwt tokens for that purpose we have to use it in each component.
+
+To avoid repetition of that code we use interceptor and define it there and that token will ne appended automatically to all requests.
+We have to provide that in our providers in app.module.ts
+
+
+
+
+
+
